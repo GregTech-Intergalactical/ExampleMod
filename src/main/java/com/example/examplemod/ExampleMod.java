@@ -7,6 +7,7 @@ import muramasa.antimatter.datagen.providers.AntimatterItemModelProvider;
 import muramasa.antimatter.event.AntimatterProvidersEvent;
 import muramasa.antimatter.registration.RegistrationEvent;
 import muramasa.antimatter.AntimatterMod;
+import muramasa.antimatter.cover.ICover;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
@@ -23,12 +24,14 @@ public class ExampleMod extends AntimatterMod {
         AntimatterDynamics.addProvider(ID, g -> new AntimatterBlockStateProvider(ID, NAME + " BlockStates", g));
         AntimatterDynamics.addProvider(ID, g -> new AntimatterItemModelProvider(ID, NAME + " Item Models", g));
     }
-    
+
     @Override
     public void onRegistrationEvent(RegistrationEvent event, Dist side) {
         switch (event) {
             case DATA_INIT:
                 ExampleData.init();
+                //todo until I fix antimatter
+                ICover test = ICover.empty;
                 break;
         }        
     }
