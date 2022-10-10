@@ -102,6 +102,9 @@ allprojects {
         }
         //GT and Felt.
         maven { url 'https://jitpack.io' }
+        maven {
+            url "https://repo.repsy.io/mvn/trinsdar/gregtech-intergalactical/"
+        }
     }
 
     java {

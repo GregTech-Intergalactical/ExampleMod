@@ -18,6 +18,9 @@
   "entrypoints": {
     "antimatter": [
       "com.example.examplemod.ExampleMod"
+    ],
+    "main": [
+      "com.example.examplemod.fabric.ExampleModFabric"
     ]
   },
 

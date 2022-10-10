@@ -18,7 +18,9 @@ architectury {
 
 dependencies {
     forge "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
-    //modImplementation("com.github.GregTech-Intergalactical.AntimatterAPI:antimatter-forge:${antimatter_version}")
+    modImplementation("com.github.gregtech-intergalactical:antimatter-forge:${antimatter_version}"){
+        exclude(group: "com.github.gregtech-intergalactical")
+    }
     //modRuntimeOnly("com.github.GregTech-Intergalactical.TesseractAPI:tesseract-forge:${tesseract_version}")
     common(project(path: ":common", configuration: "namedElements"))
     shadowCommon(project(path: ":common", configuration: "transformProductionForge"))

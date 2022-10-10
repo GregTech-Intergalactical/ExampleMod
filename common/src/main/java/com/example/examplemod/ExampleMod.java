@@ -1,19 +1,15 @@
 package com.example.examplemod;
 
-import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.AntimatterDynamics;
+import muramasa.antimatter.datagen.AntimatterDynamics;
 import muramasa.antimatter.datagen.providers.AntimatterBlockStateProvider;
 import muramasa.antimatter.datagen.providers.AntimatterItemModelProvider;
-import muramasa.antimatter.event.AntimatterProvidersEvent;
+import muramasa.antimatter.event.MaterialEvent;
 import muramasa.antimatter.registration.RegistrationEvent;
 import muramasa.antimatter.AntimatterMod;
 import muramasa.antimatter.cover.ICover;
+import muramasa.antimatter.registration.Side;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.sql.Ref;
-
-// The value here should match an entry in the META-INF/mods.toml file
 
 public class ExampleMod extends AntimatterMod {
 
@@ -23,8 +19,8 @@ public class ExampleMod extends AntimatterMod {
     @Override
     public void onRegistrarInit() {
         super.onRegistrarInit();
-        AntimatterDynamics.addProvider(ID, g -> new AntimatterBlockStateProvider(ID, NAME + " BlockStates", g));
-        AntimatterDynamics.addProvider(ID, g -> new AntimatterItemModelProvider(ID, NAME + " Item Models", g));
+        AntimatterDynamics.clientProvider(ID, () -> new AntimatterBlockStateProvider(ID, NAME + " BlockStates"));
+        AntimatterDynamics.clientProvider(ID, () -> new AntimatterItemModelProvider(ID, NAME + " Item Models"));
     }
 
     @Override
