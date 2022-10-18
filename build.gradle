@@ -23,6 +23,9 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
+        maven {
+            url = uri("https://storage.googleapis.com/devan-maven/")
+        }
         maven { url = 'https://maven.minecraftforge.net' }
         maven {
             name = 'parchment'
