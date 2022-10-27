@@ -1,0 +1,26 @@
+archivesBaseName = "${rootProject.archive_base_name}-forge"
+version = "${rootProject.minecraft_version}-${project.mod_version}"
+
+architectury {
+    platformSetupLoomIde()
+    forge()
+}
+
+dependencies {
+    forge "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+    modImplementation("com.github.gregtech-intergalactical:antimatter-forge:${antimatter_version}"){
+        exclude(group: "com.github.gregtech-intergalactical")
+    }
+    modRuntimeOnly("com.github.gregtech-intergalactical:tesseract-forge:${tesseract_version}")
+    common(project(path: ":common", configuration: "namedElements"))
+    shadowCommon(project(path: ":common", configuration: "transformProductionForge"))
+    modRuntimeOnly("mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jei_version}")
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("META-INF/mods.toml") {
+        expand "version": project.version
+    }
+}
