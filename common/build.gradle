@@ -3,7 +3,7 @@ version = "${rootProject.minecraft_version}-${project.mod_version}"
 
 dependencies {
     modCompileOnly("com.github.gregtech-intergalactical:antimatter-common:${antimatter_version}"){
-        exclude(group: "com.github.gregtech-intergalactical")
+        exclude(group: "maven.modrinth")
     }
 }
 

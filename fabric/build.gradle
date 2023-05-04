@@ -12,9 +12,8 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements"))
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric"))
     modImplementation("com.github.gregtech-intergalactical:antimatter-fabric:${antimatter_version}"){
-        exclude(group: "com.github.gregtech-intergalactical")
+        exclude(group: "maven.modrinth")
     }
-    modRuntimeOnly("com.github.gregtech-intergalactical:tesseract-fabric:${tesseract_version}")
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
 }
 

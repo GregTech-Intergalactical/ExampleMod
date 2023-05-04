@@ -69,11 +69,21 @@ allprojects {
                 includeGroup "dev.latvian.mods"
             }
         }
+        maven {
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
         //GT and Felt.
-        maven { url 'https://jitpack.io' }
         maven {
             url "https://repo.repsy.io/mvn/trinsdar/gregtech-intergalactical/"
         }
+        maven {
+            url "https://repo.repsy.io/mvn/distant/feltmc"
+        }
+        maven {
+            url = uri("https://ueaj.dev/maven")
+        }
+        maven { url 'https://jitpack.io' }
     }
 
     java {
