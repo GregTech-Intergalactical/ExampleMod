@@ -41,6 +41,6 @@ public class ExampleMod extends AntimatterMod {
 
     @Override
     public void onMaterialEvent(MaterialEvent event) {
-        event.setMaterial(ExampleData.ALUMINIUM).asMetal(933, 1700);
+        event.setMaterial(ExampleData.ALUMINIUM).asMetal(933);
     }
 }
